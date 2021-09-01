@@ -1,0 +1,23 @@
+<svg width="66" height="65" viewBox="0 0 66 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 5H9H7C3.68629 5 1 7.68629 1 11V49C1 52.3137 3.68629 55 7 55H33H37M21 5H25H33H41H45M53 5H57H59C62.3137 5 65 7.68629 65 11V53C65 54.1046 64.1046 55 63 55V55" stroke="#009C3A"/>
+<circle cx="17.5" cy="4.5" r="4" stroke="#009C3A"/>
+<circle cx="48.5" cy="4.5" r="4" stroke="#009C3A"/>
+<rect x="7.5" y="19.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="29.5" y="40.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="19.5" y="40.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="7.5" y="40.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="52.5" y="30.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="41.5" y="30.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="19.5" y="30.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="7.5" y="30.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="52.5" y="19.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="41.5" y="19.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="29.5" y="19.5" width="5" height="5" stroke="#009C3A"/>
+<rect x="19.5" y="19.5" width="5" height="5" stroke="#009C3A"/>
+<line x1="1" y1="12.5" x2="65" y2="12.5" stroke="#009C3A"/>
+<path d="M28.5 31.5L31.5 35L37.5 29.5" stroke="#009C3A"/>
+<circle cx="50" cy="51" r="13.5" stroke="#009C3A"/>
+<circle cx="49.5" cy="51.5" r="1.5" fill="#009C3A"/>
+<line x1="47" y1="51.5" x2="58" y2="51.5" stroke="#009C3A"/>
+<line x1="49.5" y1="43" x2="49.5" y2="54" stroke="#009C3A"/>
+</svg>
