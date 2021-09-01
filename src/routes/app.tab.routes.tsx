@@ -9,8 +9,10 @@ import { useTheme } from 'styled-components';
 // import PeopleSvg from '../assets/people.svg';
 
 import { AppStackRoutes } from './app.stack.routes';
-// import { MyCars } from '../screens/MyCars';
-// import { Profile } from '../screens/Profile';
+import { Dashboard } from '../screens/Dashboard';
+import { Profile } from '../screens/Profile';
+import { VacationsAllowences } from '../screens/VacationsAllowences';
+import { Production } from '../screens/Production';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -25,38 +27,48 @@ export function AppTabRoutes(){
         showLabel: false,
         style: {
           paddingVertical: Platform.OS === 'ios' ? 20 : 0,
-          height: 78,
-          backgroundColor: theme.colors.background_primary
+          height: 75,
+          backgroundColor: theme.colors.background_primary,
+          borderTopColor: 'transparent'
         }
       }}
     >
-      <Screen 
-        name="Home"
-        component={AppStackRoutes}
+      <Screen
+        name="Dashboard"
+        component={Dashboard}
         options={{
           tabBarIcon: (({ color }) => (
-            <FontAwesome5 name="home" size={24} color="green" />
+            <FontAwesome5 name="user-clock" size={24} color={color} />
           ))
         }}
       />
-      {/* <Screen 
-        name="MyCars"
-        component={MyCars}
+      <Screen
+        name="VacationsAllowences"
+        component={VacationsAllowences}
         options={{
           tabBarIcon: (({ color }) => (
-            <CarSvg width={24} height={24} fill={color} />
+            <FontAwesome5 name="suitcase-rolling" size={24} color={color} />
           ))
         }}
       />
-      <Screen 
+      <Screen
+        name="Production"
+        component={Production}
+        options={{
+          tabBarIcon: (({ color }) => (
+            <FontAwesome5 name="calendar-alt" size={24} color={color} />
+          ))
+        }}
+      />
+      <Screen
         name="Profile"
         component={Profile}
         options={{
           tabBarIcon: (({ color }) => (
-            <PeopleSvg width={24} height={24} fill={color}/>
+            <FontAwesome5 name="user-cog" size={24}  color={color} />
           ))
-        }}       
-      /> */}
+        }}
+      />
     </Navigator>
   )
 }

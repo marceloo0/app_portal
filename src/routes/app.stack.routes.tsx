@@ -10,23 +10,20 @@ const { Navigator, Screen } = createStackNavigator();
 
 export function AppStackRoutes(){
   return(
-    <Navigator 
-      headerMode="none" 
-      initialRouteName="SignIn" 
+    <Navigator
       screenOptions={{
-        cardStyle: {
-          backgroundColor: '#121214'
-        }
+        headerShown: false,
+        cardStyle: { backgroundColor: '#312e38' },
       }}
-    >      
-      <Screen 
+    >
+      <Screen
         name="SignIn"
         component={SignIn}
-      />    
-      <Screen 
+      />
+      <Screen
         name="ForgotPassword"
         component={ForgotPassword}
-      />    
+      />
     </Navigator>
   )
 }
