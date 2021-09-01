@@ -15,13 +15,12 @@ export default {
     main_secondary: '#DC1637',
     success: '#03B252',
 
-    // shape: '#E1E1E8',
-    // shape_dark: '#29292E'
+    iconInput: '#393939',
   },
 
   fonts: {
     primary_400: 'Roboto_400Regular',
     primary_500: 'Roboto_500Medium',
-    primary_700: 'Roboto_700Bold'    
+    primary_700: 'Roboto_700Bold'
   }
 }
