@@ -4,11 +4,13 @@ import { Container, Title } from './styles'
 
 interface ButtonCustomerProps extends TouchableOpacityProps {
   title: string;
+  type: 'Entrada' | 'Saida' | 'null'
+  onPress: () => void
 }
 
-export function ButtonCustomer({ title, ...rest }: ButtonCustomerProps) {
+export function ButtonCustomer({ title, type, onPress, ...rest }: ButtonCustomerProps) {
   return(
-    <Container {...rest}>
+    <Container type={type} onPress={onPress} {...rest}>
       <Title>{title}</Title>
     </Container>
   )
