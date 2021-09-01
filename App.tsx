@@ -1,7 +1,9 @@
 import React from 'react';
 import AppLoading from 'expo-app-loading';
-import { StatusBar } from 'react-native';
+import { StatusBar, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from 'styled-components';
+import AppProvider from './src/contexts'
 import { Routes } from './src/routes';
 import {
   useFonts,
@@ -23,13 +25,19 @@ export default function App() {
     return <AppLoading />
   }
   return (
-    <ThemeProvider theme={theme}>    
-        <Routes /> 
-        <StatusBar 
-          barStyle="light-content" 
-          backgroundColor="transparent"
-          translucent
-        />     
-    </ThemeProvider>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <AppProvider>
+          <StatusBar
+            barStyle="light-content"
+            backgroundColor="transparent"
+            translucent
+          />
+          <View style={{flex: 1, backgroundColor: '#121214'}}>
+            <Routes />
+          </View>
+        </AppProvider>
+      </ThemeProvider>
+    </NavigationContainer>
   );
 }
