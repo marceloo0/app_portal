@@ -5,7 +5,7 @@ import { FontAwesome5  } from '@expo/vector-icons';
 import { useWorkTime } from '../../../hooks/useWorkTime'
 import Checkbox from 'expo-checkbox';
 
-import { Container, Content, Title, Buttons, WapSaida, MessageContain, Description, CheckContain, TextCheck } from './styles'
+import * as S from './styles'
 
 interface ConfirmarProps {
   close: () => void
@@ -29,32 +29,32 @@ export const Confirmar: React.FC<ConfirmarProps> = ({ show, close, checkType, se
   }
 
   return (
-    <Container>
+    <S.Container>
       <Modal isVisible={show} >
-        <Content>
-        <Title>{`Deseja confirmar sua ${checkType ? 'entrada' : 'saída'}?`}</Title>
+        <S.Content>
+        <S.Title>{`Deseja confirmar sua ${checkType ? 'entrada' : 'saída'}?`}</S.Title>
         {checkType === false &&
-          <WapSaida>
-            <MessageContain>
+          <S.WapSaida>
+            <S.MessageContain>
               <FontAwesome5 name="exclamation-circle" size={24} color="#0085FF" />
-              <Description>Se você for produzir 6 horas ou menos{'\n'} no dia de hoje, não é necessário o {'\n'}descanso mínimo de 30 minutos.</Description>
-            </MessageContain>
-            <CheckContain>
+              <S.Description>Se você for produzir 6 horas ou menos{'\n'} no dia de hoje, não é necessário o {'\n'}descanso mínimo de 30 minutos.</S.Description>
+            </S.MessageContain>
+            <S.CheckContain>
               <Checkbox
                 value={checkBoxValue}
                 onValueChange={setCheckBoxValue}
                 color={checkBoxValue ? '#009C3A' : '#0085FF' }
               />
-              <TextCheck >Essa é minha pausa de 30 minutos.</TextCheck>
-            </CheckContain>
-          </WapSaida>
+              <S.TextCheck >Essa é minha pausa de 30 minutos.</S.TextCheck>
+            </S.CheckContain>
+          </S.WapSaida>
         }
-          <Buttons>
+          <S.Buttons>
             <ButtonCustomer onPress={close} title='Cancelar' type='null' />
             <ButtonCustomer onPress={() => handleWorkTime({type: checkType, checkBoxValue})} title='Confirmar' type='Entrada' />
-          </Buttons>
-        </Content>
+          </S.Buttons>
+        </S.Content>
       </Modal>
-    </Container>
+    </S.Container>
   )
 }

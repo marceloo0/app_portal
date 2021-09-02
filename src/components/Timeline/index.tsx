@@ -5,7 +5,7 @@ import { useWorkTime } from '../../hooks/useWorkTime'
 import { format } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR';
 
-import {Container, Title1, Box } from './styles'
+import * as S from './styles'
 
 import Calendar from '../../assets/calendar.svg'
 
@@ -19,13 +19,13 @@ export function Timeline() {
   }, []);
 
   return (
-    <Container>
-      <Title1>{selectedDateAsText}</Title1>
+    <S.Container>
+      <S.Title1>{selectedDateAsText}</S.Title1>
       {timeLine.length === 0 ? (
-        <Box>
-          <Title1>Você ainda não registrou sua{'\n'} produção  hoje. </Title1>
+        <S.Box>
+          <S.Title1>Você ainda não registrou sua{'\n'} produção  hoje. </S.Title1>
           <Calendar style={{ marginTop: 24}} />
-        </Box>
+        </S.Box>
       ) : (
         <>
           <FlatList
@@ -43,6 +43,6 @@ export function Timeline() {
           />
         </>
       )}
-    </Container>
+    </S.Container>
   )
 }

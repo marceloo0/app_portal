@@ -9,7 +9,7 @@ import { useForm } from 'react-hook-form'
 
 import { ButtonCustomer, InputCustomer } from '../../components'
 
-import { Box, Container, Description, Title } from './styles'
+import * as S from './styles'
 
 import Logo from '../../assets/logo.svg'
 
@@ -41,12 +41,12 @@ export function ForgotPassword() {
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{ flex: 1 }}
       >
-        <Container>
+        <S.Container>
           <Logo />
-          <Box>
-            <Box>
-              <Title>Recuperar senha</Title>
-              <Description>Coloque seu e-mail para receber instruções {'\n'}para alterar sua senha.</Description>
+          <S.Box>
+            <S.Box>
+              <S.Title>Recuperar senha</S.Title>
+              <S.Description>Coloque seu e-mail para receber instruções {'\n'}para alterar sua senha.</S.Description>
               <InputCustomer
                 name="email"
                 control={control}
@@ -57,21 +57,21 @@ export function ForgotPassword() {
                 placeholder="Seu e-mail de cooperado"
                 error={errors.email && errors.email.message}
               />
-            </Box>
-            <Box>
+            </S.Box>
+            <S.Box>
               <ButtonCustomer
                 title='Enviar'
                 type='Entrada'
                 onPress={handleSubmit(handleForgotPassword)}
               />
-            </Box>
-          </Box>
+            </S.Box>
+          </S.Box>
           <BorderlessButton
             onPress={() => {navigation.navigate('SignIn')}}
           >
-            <Description >Voltar ao login</Description>
+            <S.Description >Voltar ao login</S.Description>
           </BorderlessButton>
-        </Container>
+        </S.Container>
       </ScrollView>
     </KeyboardAvoidingView>
   )

@@ -4,7 +4,7 @@ import { Control, Controller } from 'react-hook-form'
 import { useTheme } from 'styled-components'
 import { BorderlessButton } from 'react-native-gesture-handler';
 
-import { Container, InputText, Icon, Error, IconContainer } from './styles'
+import * as S from './styles'
 
 interface InputCustomerProps extends TextInputProps {
   iconName: string;
@@ -36,17 +36,17 @@ export function InputCustomer({ iconName, control, name, error, secureTextEntry 
 
   return (
     <>
-      <Container isErrored={!!error} isFocused={isFocused}>
+      <S.Container isErrored={!!error} isFocused={isFocused}>
         <Controller
           control={control}
           render={({ field: { onChange, value }}) => (
             <>
-              <Icon
+              <S.Icon
                 name={iconName}
                 size={18}
                 isFocused={isFocused}
               />
-              <InputText
+              <S.InputText
                 onFocus={handleInputFocus}
                 onBlur={() => handleInputBlur(value)}
                 value={value}
@@ -58,20 +58,20 @@ export function InputCustomer({ iconName, control, name, error, secureTextEntry 
               />
               {secureTextEntry ?
                 <BorderlessButton onPress={handlePasswordVisibilityChange}>
-                  <IconContainer>
-                    <Icon
+                  <S.IconContainer>
+                    <S.Icon
                       name={isPasswordVisible ? 'eye-off' : 'eye'}
                       size={18}
                     />
-                  </IconContainer>
+                  </S.IconContainer>
                 </BorderlessButton>
               : null}
             </>
           )}
           name={name}
         />
-      </Container>
-      {error && <Error>{error}</Error>}
+      </S.Container>
+      {error && <S.Error>{error}</S.Error>}
     </>
   )
 }

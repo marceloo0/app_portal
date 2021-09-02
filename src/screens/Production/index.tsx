@@ -5,7 +5,7 @@ import { Header, Calendar, DayProps } from '../../components'
 
 import { useProduction } from '../../hooks'
 
-import { Container, Description, Title } from './styles'
+import * as S from './styles'
 
 export function Production() {
   const navigation = useNavigation()
@@ -40,7 +40,7 @@ export function Production() {
   const dataF = formatedData.filter(item => item !== undefined)
 
   return (
-    <Container>
+    <S.Container>
       <Header />
       {loading
       ?
@@ -49,11 +49,11 @@ export function Production() {
         </View>
       :
         <>
-          <Title>Sua produção mensal</Title>
-          <Description>Selecione uma data abaixo, para acessar sua produção do dia em questão:</Description>
+          <S.Title>Sua produção mensal</S.Title>
+          <S.Description>Selecione uma data abaixo, para acessar sua produção do dia em questão:</S.Description>
           <Calendar onDayPress={handleChangeDate} data={dataF} onMonthChange={handleChangeDateMonth} />
         </>
       }
-    </Container>
+    </S.Container>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Periodo, Icon, PeriodoText, Content } from './styles'
+import * as S from './styles'
 
 interface SelectProps {
   title: string
@@ -9,12 +9,12 @@ interface SelectProps {
 
 export const Select: React.FC<SelectProps> = ({ title, onPress }) => {
   return (
-    <Container>
-      <PeriodoText>Periodo Aquisitivo</PeriodoText>
-      <Content onPress={onPress}>
-        <Periodo>{title}</Periodo>
-        <Icon name="chevron-down" />
-      </Content>
-    </Container>
+    <S.Container>
+      <S.PeriodoText>Periodo Aquisitivo</S.PeriodoText>
+      <S.Content onPress={onPress}>
+        <S.Periodo>{title}</S.Periodo>
+        <S.Icon name="chevron-down" />
+      </S.Content>
+    </S.Container>
   )
 }

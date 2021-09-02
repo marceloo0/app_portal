@@ -1,6 +1,6 @@
 import React from 'react'
 import { TouchableOpacityProps } from 'react-native'
-import { Container, Title } from './styles'
+import * as S from './styles'
 
 interface ButtonCustomerProps extends TouchableOpacityProps {
   title: string;
@@ -10,8 +10,8 @@ interface ButtonCustomerProps extends TouchableOpacityProps {
 
 export function ButtonCustomer({ title, type, onPress, ...rest }: ButtonCustomerProps) {
   return(
-    <Container type={type} onPress={onPress} {...rest}>
-      <Title>{title}</Title>
-    </Container>
+    <S.Container type={type} onPress={onPress} {...rest}>
+      <S.Title>{title}</S.Title>
+    </S.Container>
   )
 }

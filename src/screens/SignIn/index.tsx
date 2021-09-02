@@ -12,12 +12,7 @@ import { InputCustomer, ButtonCustomer } from '../../components'
 
 import Logo from '../../assets/logo.svg'
 
-import {
-  Container,
-  Title,
-  Box,
-  Description
-} from './styles'
+import * as S from './styles'
 
 interface FormData {
   username: string;
@@ -61,11 +56,11 @@ export function SignIn() {
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{ flex: 1 }}
       >
-        <Container>
+        <S.Container>
           <Logo />
-          <Box>
-            <Box>
-              <Title>Faça seu login</Title>
+          <S.Box>
+            <S.Box>
+              <S.Title>Faça seu login</S.Title>
               <InputCustomer
                 name="username"
                 control={control}
@@ -85,21 +80,21 @@ export function SignIn() {
                 placeholder="Sua senha de cooperado"
                 error={errors.password && errors.password.message}
               />
-            </Box>
-            <Box>
+            </S.Box>
+            <S.Box>
               <ButtonCustomer
                 title='Entrar'
                 type='Entrada'
                 onPress={handleSubmit(handleSignIn)}
               />
-            </Box>
-          </Box>
+            </S.Box>
+          </S.Box>
           <BorderlessButton
             onPress={handleForgot}
           >
-            <Description>Esqueceu sua senha?</Description>
+            <S.Description>Esqueceu sua senha?</S.Description>
           </BorderlessButton>
-        </Container>
+        </S.Container>
       </ScrollView>
     </KeyboardAvoidingView>
   )

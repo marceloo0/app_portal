@@ -5,7 +5,7 @@ import { Header, CardPaidLeave, Select, ButtonCustomer, PeriodoAquisitivo, Chart
 import { usePaidLeave } from '../../hooks/usePaidLeave'
 import { format, parseISO } from 'date-fns'
 
-import { Container, Title, ChartsPaidLeave, Content } from './styles'
+import * as S from './styles'
 
 export function VacationsAllowences() {
   const { annual_leaves, days_off, paidleaveLoading, referencesPeriods, getPaidLeave, getReferencesPeriods } = usePaidLeave()
@@ -29,21 +29,21 @@ export function VacationsAllowences() {
 
   return (
       <ScrollView style={{ backgroundColor: '#121214'}}>
-        <Container>
+        <S.Container>
           <Header paidleave={true} onPress={() => {}} />
-          <Title>Férias e Abono</Title>
+          <S.Title>Férias e Abono</S.Title>
           <Select title={`${format(parseISO(referencesPeriods[0].start), 'dd/MM/yyyy')} - ${format(parseISO(referencesPeriods[0].end),
             'dd/MM/yyyy'
           )}`} onPress={handleShowPeriodoModal} />
           {paidleaveLoading ?
-            <Content>
+            <S.Content>
               <ActivityIndicator size={100} color="#009C3A" />
-            </Content> : (
+            </S.Content> : (
               <>
-                <ChartsPaidLeave>
+                <S.ChartsPaidLeave>
                   <ChartPie />
-                </ChartsPaidLeave>
-                <Content>
+                </S.ChartsPaidLeave>
+                <S.Content>
                   <CardPaidLeave
                     type='annual_leaves'
                     obtained={Object(annual_leaves).obtained}
@@ -56,11 +56,11 @@ export function VacationsAllowences() {
                     approved={Object(days_off).approved}
                     remaining={Object(days_off).remaining}
                     />
-                </Content>
+                </S.Content>
                 <ButtonCustomer title='Solicitar Ferias/Abonos' type='Entrada' onPress={() => {}} />
               </>
             )}
-        </Container>
+        </S.Container>
         {showPeriodoModal &&
           <PeriodoAquisitivo
           show={showPeriodoModal}
