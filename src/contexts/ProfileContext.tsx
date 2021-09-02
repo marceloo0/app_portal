@@ -2,14 +2,19 @@ import React, { createContext, useEffect, useState } from "react";
 import { CURRENT_PERSON } from '../constants/endpoints/person'
 import api from '../services/api'
 
+interface PositionProps {
+  position_display: string
+  title: string
+}
+
 interface ProfileProps {
   id: string
   name: string
+  email: string
   avatar: string
-  positionDisplay: string
+  positionDisplay: PositionProps
   afiliationDate: string
 }
-
 
 interface ProfileContextData {
   getPerson: () => void
@@ -27,12 +32,14 @@ export const ProfileContextProvider: React.FC = ({ children }) => {
     try {
       setLoadind(true)
       const { data } = await api.get(CURRENT_PERSON)
+      console.log(data)
       setData({
-        id: data.id,
-        name: data.name_display,
-        avatar: data.avatar,
-        positionDisplay: data.position_display.position_display,
-        afiliationDate: data.affiliation_date
+        id: data?.id,
+        name: data?.name_display,
+        email: data?.corporate_email,
+        avatar: data?.avatar,
+        positionDisplay: data?.position_display.position_display,
+        afiliationDate: data?.affiliation_date
       })
       setLoadind(false)
     } catch (error) {

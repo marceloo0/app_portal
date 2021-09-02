@@ -19,7 +19,6 @@ interface TypeBalanceItem {
 interface ReferencesPeriodsProps {
   start: string
   end: string
-  key: string
 }
 
 interface PaidLeaveContextData {
@@ -65,7 +64,7 @@ export const PaidLeaveContextProvider: React.FC = ({ children }) => {
   const getReferencesPeriods = async () => {
     try {
       const { data } = await api.get(PAID_LEAVE_REFERENCE_PERIODS);
-      const formatted = data.map(([start, end, index]) => ({ start, end, key: index }));
+      const formatted = data.map((item: any) => ({ start: item[0], end: item[1]}));
       setReferencesPeriods(formatted)
     } catch (error) {
       console.log(error)
